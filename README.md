@@ -1,5 +1,5 @@
 # projet-site-internet
-Itération 2, création d'un site internet
+## Création d'un site internet
 
 Création site web en html/css/JS en suivant une structure pré défini avec:
 
