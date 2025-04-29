@@ -1,7 +1,8 @@
 const filename = window.location.pathname.split('/').pop();
 document.getElementById('page-title').textContent = filename || 'Accueil';
 
-
+const maxPages = 500;
+const pageAleatoire = Math.floor(Math.random() * maxPages) + 1;
 
 const options = {
     method: 'GET',
@@ -11,15 +12,17 @@ const options = {
     }
 };
 
-fetch('https://api.themoviedb.org/3/movie/top_rated?language=fr-FR', options)
+fetch(`https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=${pageAleatoire}`, options)
     .then(res => res.json())
     .then(data => {
         const films = data.results;
         const conteneur = document.getElementById('cards');
-        afficherCartesFilms(films, 20, conteneur); 
+        afficherCartesFilms(films, 20, conteneur);
     })
 
-.catch(err => console.error(err));
+
+    .catch(err => console.error(err));
+console.log(`Vous êtes page: ${pageAleatoire}`);
 
 
 
@@ -27,7 +30,7 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=fr-FR', options)
 
 function afficherCartesFilms(films, nbCarte, conteneurCarte) {
     // pour limiter si on a moins de films que ce qu'on en demande
-     const max = Math.min(nbCarte, films.length);
+    const max = Math.min(nbCarte, films.length);
 
     for (let i = 0; i < max; i++) {
         const film = films[i];
@@ -35,7 +38,7 @@ function afficherCartesFilms(films, nbCarte, conteneurCarte) {
         const description = film.overview;
         const image = 'https://image.tmdb.org/t/p/w500' + film.poster_path;
 
-        
+
         const carte = document.createElement('article');
         carte.classList.add('card');
 
@@ -55,15 +58,42 @@ function afficherCartesFilms(films, nbCarte, conteneurCarte) {
         resumeCarte.textContent = description;
         contenuCarte.appendChild(resumeCarte);
 
-        
+
         carte.appendChild(headerCarte);
         carte.appendChild(imageCarte);
         carte.appendChild(contenuCarte);
 
-        
+
         conteneurCarte.appendChild(carte);
     }
 }
+
+const boutonRandom = document.querySelector('.button');
+
+function FilmRandom() {
+    const maxPages = 500;
+    const pageAleatoire = Math.floor(Math.random() * maxPages) + 1;
+    const url = `https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=${pageAleatoire}`;
+
+    console.log(`Vous êtes sur la page : ${pageAleatoire}`);
+
+    fetch(url, options)
+        .then(res => res.json())
+        .then(data => {
+            const films = data.results;
+            const conteneur = document.getElementById('cards');
+            conteneur.innerHTML = ''; // on vide avant d'ajouter les nouvelles cartes
+            afficherCartesFilms(films, 20, conteneur);
+        })
+        .catch(err => console.error(err));
+}
+
+boutonRandom.addEventListener('click', FilmRandom);
+
+
+
+
+
 
 
 
