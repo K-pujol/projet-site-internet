@@ -12,10 +12,10 @@ for (let i = 0; i < nbCarte; i++) {
     const carte = document.createElement('article');
     carte.classList.add('card'); // Ajoute une classe "card" à l'élément créé
 
-    const headerCarte = document.createElement('header');
-    const titreCarte = document.createElement('h2');
-    titreCarte.textContent = `Titre film ${i + 1}`;  
-    headerCarte.appendChild(titreCarte); // Remplacer cardTitle par titreCarte
+    const headerCarte = document.createElement('header'); // créer un header
+    const titreCarte = document.createElement('h2'); // avec un titre h2
+    titreCarte.textContent = `Titre film ${i + 1}`;  // rajoute le nombre i+1 pour avoir le numéro du film (temporaire)
+    headerCarte.appendChild(titreCarte); 
 
 
     const imageCarte = document.createElement('img');
