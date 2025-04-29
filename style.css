@@ -11,8 +11,6 @@
     position: fixed;
     width: 100%;
     z-index: 1000;
-   
-
 }
 
 
@@ -30,12 +28,12 @@
 
 .page-navigation {
 
- color: white;
+    color: white;
 
 }
 
 .logo {
-    
+
     width: 15%;
 
 }
@@ -50,7 +48,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 20px;
-    
+
 }
 
 .card {
@@ -90,7 +88,7 @@ body {
     background-color: #212121;
 }
 
-/* From Uiverse.io by satyamchaudharydev */ 
+/* From Uiverse.io by satyamchaudharydev */
 /* === removing default button style ===*/
 .button {
     margin: 0;
@@ -99,13 +97,13 @@ body {
     padding: 0;
     border: none;
     cursor: pointer;
-  }
-  
-  /* button styling */
-  .button {
+}
+
+/* button styling */
+.button {
     --border-right: 6px;
-    --text-stroke-color: rgba(255,255,255,0.6);
-    --animation-color: #610b0e;
+    --text-stroke-color: white;
+    --animation-color: white;
     --fs-size: 2em;
     letter-spacing: 3px;
     text-decoration: none;
@@ -115,9 +113,10 @@ body {
     text-transform: uppercase;
     color: transparent;
     -webkit-text-stroke: 1px var(--text-stroke-color);
-  }
-  /* this is the text, when you hover on button */
-  .hover-text {
+}
+
+/* this is the text, when you hover on button */
+.hover-text {
     position: absolute;
     box-sizing: border-box;
     content: attr(data-text);
@@ -128,20 +127,21 @@ body {
     overflow: hidden;
     transition: 0.5s;
     -webkit-text-stroke: 1px var(--animation-color);
-  }
-  /* hover */
-  .button:hover .hover-text {
+}
+
+/* hover */
+.button:hover .hover-text {
     width: 100%;
     filter: drop-shadow(0 0 23px var(--animation-color))
-  }
+}
 
 @media screen and (max-width: 480px) {
 
 
     .main-header {
-        display: flex;
+        /* display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between; */
         height: 80px;
         background-color: #610b0e;
         top: 0;
@@ -153,10 +153,17 @@ body {
 
     }
 
+  
+    .logo {
+
+        width: 3rem;
+    
+    }
+
     #page-title {
         color: white;
         font-size: 1rem;
-        margin: 0 auto;  
+        margin: 0 auto;
         height: 100%;
         display: flex;
         align-items: center;
@@ -170,9 +177,38 @@ body {
 
         color: white;
         font-size: 1rem;
+        margin-right: 20px;
 
     }
 
+    
 
+
+/* From Uiverse.io by satyamchaudharydev */
+/* === removing default button style ===*/
+.button {
+    margin-right: 20px;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+/* button styling */
+.button {
+    --border-right: none;
+    --text-stroke-color: white;
+    --animation-color: white;
+    --fs-size: 1em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+}
 
 }
