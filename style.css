@@ -2,20 +2,22 @@
 
 .main-header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    height: 50%;
-    background-color: #610b0e;
+    height: 35%;
+    background-color: rgba(97, 11, 14, 0.8);
+    /* même couleur avec 80% d'opacité */
     top: 0;
     left: 0;
     position: fixed;
     width: 100%;
     z-index: 1000;
-
+    backdrop-filter: blur(8px);
 }
 
 
 #page-title {
+
     color: white;
     padding-right: 1em;
     border-right: 1px solid white;
@@ -27,25 +29,27 @@
 }
 
 .page-navigation {
- color: white;
+
+    color: white;
+
 }
 
 .logo {
-    
-    width: 15%;
 
-    
+    width: 15%;
 
 }
 
 /* --------------------------- Body ----------------------------------- */
 #cards {
 
-    max-width: 700px;
+    max-width: 90%;
     margin: 1em auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+
+
 }
 
 .card {
@@ -66,10 +70,12 @@
 .card h2 {
     margin: 0;
     padding: 0.5rem;
+    color: white;
 }
 
 .card .content {
     padding: 0.5rem;
+    color: white;
 }
 
 .card footer {
@@ -80,7 +86,55 @@
 
 body {
     padding-top: 20%;
-    background-color: #e8e8e8;
+    background-color: #212121;
+}
+
+/* From Uiverse.io by satyamchaudharydev */
+/* === removing default button style ===*/
+.button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+/* button styling */
+.button {
+    --border-right: 6px;
+    --text-stroke-color: white;
+    --animation-color: white;
+    --fs-size: 2em;
+    margin-right: 2%;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* this is the text, when you hover on button */
+.hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+}
+
+/* hover */
+.button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
 }
 
 @media screen and (max-width: 480px) {
@@ -89,7 +143,7 @@ body {
     .main-header {
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
         height: 80px;
         background-color: #610b0e;
         top: 0;
@@ -101,10 +155,21 @@ body {
 
     }
 
+    body {
+        padding-top: 100px;
+        background-color: #212121;
+    }
+
+    .logo {
+
+        width: 6rem;
+
+    }
+
     #page-title {
         color: white;
         font-size: 1rem;
-        margin: 0 auto;  
+        margin: 0 auto;
         height: 100%;
         display: flex;
         align-items: center;
@@ -116,11 +181,51 @@ body {
 
     .page-navigation {
 
-        color: black;
+        color: white;
         font-size: 1rem;
+        margin-right: 20px;
 
     }
 
 
+    #cards {
+
+        max-width: 90%;
+        margin: 1em auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        gap: 20px;
+
+
+    }
+
+
+
+    /* From Uiverse.io by satyamchaudharydev */
+    /* === removing default button style ===*/
+    .button {
+        margin-right: 20px;
+        height: auto;
+        background: transparent;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* button styling */
+    .button {
+        --border-right: none;
+        --text-stroke-color: white;
+        --animation-color: white;
+        --fs-size: 1em;
+        letter-spacing: 3px;
+        text-decoration: none;
+        font-size: var(--fs-size);
+        font-family: "Arial";
+        position: relative;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 1px var(--text-stroke-color);
+    }
 
 }
