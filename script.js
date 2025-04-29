@@ -1,6 +1,6 @@
-let filename = window.location.pathname.split('/').pop();
-filename = filename.replace('.html', ''); 
-document.getElementById('page-title').textContent = filename || 'Accueil';
+// let filename = window.location.pathname.split('/').pop();
+// filename = filename.replace('.html', ''); 
+// document.getElementById('page-title').textContent = filename || 'Accueil';
 
 
 const maxPages = 500;
@@ -19,7 +19,7 @@ fetch(`https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=${pageAl
     .then(data => {
         const films = data.results;
         const conteneur = document.getElementById('cards');
-        afficherCartesFilms(films, 20, conteneur);
+        afficherCartesFilms(films, 16, conteneur);
     })
 
 
@@ -39,6 +39,7 @@ function afficherCartesFilms(films, nbCarte, conteneurCarte) {
         const titre = film.title;
         const description = film.overview;
         const image = 'https://image.tmdb.org/t/p/w500' + film.poster_path;
+        const dateSortie = film.release_date;
 
 
         const carte = document.createElement('article');
@@ -48,6 +49,12 @@ function afficherCartesFilms(films, nbCarte, conteneurCarte) {
         const titreCarte = document.createElement('h2');
         titreCarte.textContent = titre;
         headerCarte.appendChild(titreCarte);
+
+        const footerCarte = document.createElement('footer');
+        const sortieCarte = document.createElement('h2');
+        sortieCarte.textContent = dateSortie;
+        footerCarte.appendChild(sortieCarte);
+
 
         const imageCarte = document.createElement('img');
         imageCarte.src = image;
@@ -64,6 +71,7 @@ function afficherCartesFilms(films, nbCarte, conteneurCarte) {
         carte.appendChild(headerCarte);
         carte.appendChild(imageCarte);
         carte.appendChild(contenuCarte);
+        carte.appendChild(footerCarte);
 
 
         conteneurCarte.appendChild(carte);

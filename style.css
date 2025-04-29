@@ -2,15 +2,17 @@
 
 .main-header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    height: 50%;
-    background-color: #610b0e;
+    height: 35%;
+    background-color: rgba(97, 11, 14, 0.8);
+    /* même couleur avec 80% d'opacité */
     top: 0;
     left: 0;
     position: fixed;
     width: 100%;
     z-index: 1000;
+    backdrop-filter: blur(8px);
 }
 
 
@@ -41,13 +43,12 @@
 /* --------------------------- Body ----------------------------------- */
 #cards {
 
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 700px;
+    max-width: 90%;
     margin: 1em auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+
 
 }
 
@@ -105,6 +106,7 @@ body {
     --text-stroke-color: white;
     --animation-color: white;
     --fs-size: 2em;
+    margin-right: 2%;
     letter-spacing: 3px;
     text-decoration: none;
     font-size: var(--fs-size);
@@ -139,9 +141,9 @@ body {
 
 
     .main-header {
-        /* display: flex;
+        display: flex;
         align-items: center;
-        justify-content: space-between; */
+        justify-content: space-between;
         height: 80px;
         background-color: #610b0e;
         top: 0;
@@ -153,11 +155,15 @@ body {
 
     }
 
-  
+    body {
+        padding-top: 100px;
+        background-color: #212121;
+    }
+
     .logo {
 
-        width: 3rem;
-    
+        width: 6rem;
+
     }
 
     #page-title {
@@ -176,39 +182,50 @@ body {
     .page-navigation {
 
         color: white;
-        font-size: 0.7rem;
+        font-size: 1rem;
         margin-right: 20px;
 
     }
 
-    
+
+    #cards {
+
+        max-width: 90%;
+        margin: 1em auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        gap: 20px;
 
 
-/* From Uiverse.io by satyamchaudharydev */
-/* === removing default button style ===*/
-.button {
-    margin-right: 20px;
-    height: auto;
-    background: transparent;
-    padding: 0;
-    border: none;
-    cursor: pointer;
-}
+    }
 
-/* button styling */
-.button {
-    --border-right: none;
-    --text-stroke-color: white;
-    --animation-color: white;
-    --fs-size: 1em;
-    letter-spacing: 3px;
-    text-decoration: none;
-    font-size: var(--fs-size);
-    font-family: "Arial";
-    position: relative;
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
-}
+
+
+    /* From Uiverse.io by satyamchaudharydev */
+    /* === removing default button style ===*/
+    .button {
+        margin-right: 20px;
+        height: auto;
+        background: transparent;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* button styling */
+    .button {
+        --border-right: none;
+        --text-stroke-color: white;
+        --animation-color: white;
+        --fs-size: 1em;
+        letter-spacing: 3px;
+        text-decoration: none;
+        font-size: var(--fs-size);
+        font-family: "Arial";
+        position: relative;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-text-stroke: 1px var(--text-stroke-color);
+    }
 
 }
