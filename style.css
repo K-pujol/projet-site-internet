@@ -1,26 +1,46 @@
-.main-header {
+/* ----------------header------------------ */
 
+.main-header {
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    width: 100%;
-    height: auto;
-    justify-content: space-between;
+    height: 50%;
     background-color: #610b0e;
-    color: black;
     top: 0;
     left: 0;
     position: fixed;
+    width: 100%;
     z-index: 1000;
-   
+
+}
+
+
+#page-title {
+    color: white;
+    padding-right: 1em;
+    border-right: 1px solid white;
+    font-size: 2rem;
+    height: 90%;
+    display: flex;
+    align-items: center;
+
+}
+
+.page-navigation {
+ color: white;
 }
 
 .logo {
-    width: 10%;
+    
+    width: 15%;
+
+    
 
 }
 
-.cards {
-    
+/* --------------------------- Body ----------------------------------- */
+#cards {
+
     max-width: 700px;
     margin: 1em auto;
     display: grid;
@@ -59,5 +79,47 @@
 }
 
 body {
+    padding-top: 20%;
     background-color: #e8e8e8;
+}
+
+@media screen and (max-width: 480px) {
+
+
+    .main-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 80px;
+        background-color: #610b0e;
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        padding: 1em;
+
+    }
+
+    #page-title {
+        color: white;
+        font-size: 1rem;
+        margin: 0 auto;  
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-grow: 1;
+        border-right: none;
+    }
+
+
+    .page-navigation {
+
+        color: white;
+        font-size: 1rem;
+    }
+
+
+
 }
