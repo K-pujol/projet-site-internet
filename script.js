@@ -134,26 +134,33 @@ document.querySelector(".form").addEventListener("submit", function (event) {
     event.preventDefault();
 
     const filmTitle = document.getElementById("tfilm").value;
-    const filmImg = document.getElementById("poster").value;
+    const urlImg = document.getElementById("poster").value;
+    const fichierImg = document.getElementById("posterFile").files[0];
     const filmSyno = document.getElementById("syno").value;
     const filmAnnee = document.getElementById("annee").value;
 
-    console.log(filmTitle, filmImg, filmSyno, filmAnnee);
+    // pour vérifier qu'au moins un des champs pour l'image est utilisé
+    if (!urlImg && !fichierImg) {
+        alert("Veuillez fournir un lien vers une image ou importer un fichier.");
+        return; 
+    }
 
-    filmAjouter.push({
-        titre: filmTitle,
-        synopsis: filmSyno,
-        image: filmImg,
-        annee: filmAnnee
-    });
+    let filmImg;
+    if (fichierImg) {
+        filmImg = URL.createObjectURL(fichierImg);
+    } else {
+        filmImg = urlImg;
+    }
 
     creerCartePerso(filmTitle, filmSyno, filmImg, filmAnnee);
 
     formContainer.style.display = "none";
     overlay.style.display = "none";
 
+    // Nettoyage des champs
     document.getElementById("tfilm").value = "";
     document.getElementById("poster").value = "";
+    document.getElementById("posterFile").value = "";
     document.getElementById("syno").value = "";
     document.getElementById("annee").value = "";
 });
