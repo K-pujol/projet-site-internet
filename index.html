@@ -54,27 +54,36 @@
 
         <button id="ajout-film"> Ajoutez un film ! </button>
 
-        <div id="cards"></div> <!--la génération se fait de le JS-->
+        <div id="cards-persos"></div>
+        <div id="cards-api"></div>
 
 
         <div id="overlay">
             <div id="form-container" style="display:none">
-                <form class="form">
+                <form class="form" autocomplete="off">
+
                     <div class="form-group">
-                        <label for="fname">Prénom:</label><br>
-                        <input type="text" id="fname" name="fname" value="John"><br>
-                        <label for="lname">Nom:</label><br>
-                        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                        <label for="tfilm">Titre film:</label><br>
+                        <input type="text" id="tfilm" name="tfilm"><br><br>
                     </div>
+
                     <div class="form-group">
-                        <label for="email">Mail</label>
-                        <input required="" name="email" id="email" type="text">
+                        <label for="poster">Lien vers l'affiche du film :</label>
+                        <input type="url" id="poster" name="poster" placeholder="https://exemple.com/image.jpg">
                     </div>
+
                     <div class="form-group">
-                        <label for="textarea">Synopsis</label>
-                        <textarea required="" cols="50" rows="10" id="textarea" name="textarea"></textarea>
+                        <label for="syno">Synopsis</label>
+                        <textarea required="" cols="50" rows="10" id="syno" name="textarea"></textarea>
                     </div>
-                    <button type="submit" class="form-submit-btn">Submit</button>
+
+                    <div class="form-group">
+                        <label for="annee">Année de sortie:</label><br>
+                        <input type="date" id="annee" name="annee"><br><br>
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">Valider !</button>
+
                 </form>
             </div>
         </div>

@@ -1,8 +1,3 @@
-// let filename = window.location.pathname.split('/').pop();
-// filename = filename.replace('.html', ''); 
-// document.getElementById('page-title').textContent = filename || 'Accueil';
-
-
 const maxPages = 500;
 const pageAleatoire = Math.floor(Math.random() * maxPages) + 1;
 
@@ -14,19 +9,18 @@ const options = {
     }
 };
 
+//--------------------------------Appel API-----------------------------\\
 fetch(`https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=${pageAleatoire}`, options)
     .then(res => res.json())
     .then(data => {
         const films = data.results;
-        const conteneur = document.getElementById('cards');
+        const conteneur = document.getElementById('cards-api');
         afficherCartesFilms(films, 16, conteneur);
     })
 
 
     .catch(err => console.error(err));
 console.log(`Vous êtes page: ${pageAleatoire}`);
-
-
 
 
 
@@ -91,7 +85,7 @@ function FilmRandom() {
         .then(res => res.json())
         .then(data => {
             const films = data.results;
-            const conteneur = document.getElementById('cards');
+            const conteneur = document.getElementById('cards-api');
             conteneur.innerHTML = ''; // on vide avant d'ajouter les nouvelles cartes
             afficherCartesFilms(films, 20, conteneur);
         })
@@ -120,8 +114,84 @@ btnAjout.addEventListener("click", () => {
     overlay.style.display = "block";
 });
 
-// Clic sur le fond flou pour fermer
-overlay.addEventListener("click", () => {
+// pour quitter le formulaire si on clic a côté
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        formContainer.style.display = "none";
+        overlay.style.display = "none";
+        document.getElementById("tfilm").value = "";
+        document.getElementById("poster").value = "";
+        document.getElementById("syno").value = "";
+        document.getElementById("annee").value = "";
+    }
+});
+
+// -----------------------Recuperer info formulaire-------------------------\\
+
+const filmAjouter = [];
+
+document.querySelector(".form").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const filmTitle = document.getElementById("tfilm").value;
+    const filmImg = document.getElementById("poster").value;
+    const filmSyno = document.getElementById("syno").value;
+    const filmAnnee = document.getElementById("annee").value;
+
+    console.log(filmTitle, filmImg, filmSyno, filmAnnee);
+
+    filmAjouter.push({
+        titre: filmTitle,
+        synopsis: filmSyno,
+        image: filmImg,
+        annee: filmAnnee
+    });
+
+    creerCartePerso(filmTitle, filmSyno, filmImg, filmAnnee);
+
     formContainer.style.display = "none";
     overlay.style.display = "none";
+
+    document.getElementById("tfilm").value = "";
+    document.getElementById("poster").value = "";
+    document.getElementById("syno").value = "";
+    document.getElementById("annee").value = "";
 });
+
+
+
+function creerCartePerso(titre, synopsis, image, annee) {
+
+    const carte = document.createElement('article');
+    carte.classList.add('card');
+
+    const headerCarte = document.createElement('header');
+    const titreCarte = document.createElement('h2');
+    titreCarte.textContent = titre;
+    headerCarte.appendChild(titreCarte);
+
+    const imageCarte = document.createElement('img');
+    imageCarte.src = image;
+    imageCarte.alt = `Affiche du film ${titre}`;
+
+    const contenuCarte = document.createElement('div');
+    contenuCarte.classList.add('content');
+
+    const resumeCarte = document.createElement('p');
+    resumeCarte.textContent = synopsis;
+    contenuCarte.appendChild(resumeCarte);
+
+    const footerCarte = document.createElement('footer');
+    const sortieCarte = document.createElement('h2');
+    sortieCarte.textContent = annee;
+    footerCarte.appendChild(sortieCarte);
+
+    carte.appendChild(headerCarte);
+    carte.appendChild(imageCarte);
+    carte.appendChild(contenuCarte);
+    carte.appendChild(footerCarte);
+
+    document.getElementById("cards-persos").appendChild(carte);
+}
+
+

@@ -91,7 +91,7 @@
 
 
 /* --------------------------- Body ----------------------------------- */
-#cards {
+#cards-api, #cards-persos {
 
     max-width: 90%;
     margin: 1em auto;
@@ -230,7 +230,7 @@ p {
 
     width: 400px;
     background: linear-gradient(#212121, #212121) padding-box,
-        linear-gradient(145deg, transparent 35%, #540f12, #ffffff) border-box;
+        linear-gradient(145deg, transparent 35%, #540f12, #ff0000) border-box;
     border: 2px solid transparent;
     padding: 32px 24px;
     font-size: 14px;
@@ -340,8 +340,9 @@ p {
 }
 
 #form-container .form-submit-btn:hover {
-    background-color: #fff;
+    background-color: rgba(97, 11, 14, 0.8);
     border-color: #fff;
+    color: #fff;
 }
 
 
@@ -446,7 +447,7 @@ p {
     }
 
 
-    #cards {
+    #cards-api, #cards-persos {
         max-width: 90%;
         margin: 1em auto;
         display: grid;
