@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+
+    <title>Jeux</title>
+
 </head>
+
 <body>
-    
+    <header class="main-header">
+
+        <img src="./photo/logo.png" alt="logo site aktu" class="logo">
+       
+
+        <select name="Navigation" class="navigation-page" onchange="navigate(this)">
+            <option value=""selected disabled hidden>Menu</option>
+            <option value="index.html">Accueil</option>
+            <option value="galerie.html">Galerie</option>
+            <option value="jeux.html">Jeux</option>
+        </select>
+
+
+    </header>
+
+    <main>
+
+        
+
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="bloc-API">
+            <p>API Utilisé</p>
+            <img src="./photo/TMDB.svg" alt="logo de l'API utilisé" class="logo-API">
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
 </body>
+
+
 </html>
