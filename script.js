@@ -126,7 +126,7 @@ overlay.addEventListener("click", (e) => {
     }
 });
 
-// -----------------------Recuperer info formulaire-------------------------\\
+// ------------------------Recuperer info formulaire-------------------------\\
 
 const filmAjouter = [];
 
