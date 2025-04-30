@@ -108,3 +108,20 @@ function navigate(select) {
         window.location.href = url;
     }
 }
+
+// --------------------------Afficher formulaire------------------------------\\
+
+const btnAjout = document.getElementById("ajout-film");
+const formContainer = document.getElementById("form-container");
+const overlay = document.getElementById("overlay");
+
+btnAjout.addEventListener("click", () => {
+    formContainer.style.display = "block";
+    overlay.style.display = "block";
+});
+
+// Clic sur le fond flou pour fermer
+overlay.addEventListener("click", () => {
+    formContainer.style.display = "none";
+    overlay.style.display = "none";
+});
