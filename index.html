@@ -15,15 +15,29 @@
     <header class="main-header">
 
         <img src="./photo/logo.png" alt="logo site aktu" class="logo">
-        <!-- <h1 id="page-title">Chargement...</h1> -->
-        <h1 class="page-navigation"> Accueil</h1>
-        <h1 class="page-navigation"> Gallerie</h1>
-        <h1 class="page-navigation"> Jeux</h1>
+        <!-- <a href="index.html">
+            <h1 class="page-navigation"> Accueil </h1>
+        </a>
+        <a href="galerie.html">
+            <h1 class="page-navigation"> Galerie</h1>
+        </a>
+        <a href="jeux.html">
+            <h1 class="page-navigation"> Jeux</h1>
+        </a> -->
 
         <button class="button" data-text="Awesome">
             <span class="actual-text">&nbsp;Random&nbsp;</span>
             <span aria-hidden="true" class="hover-text">&nbsp;Random&nbsp;</span>
         </button>
+
+
+        <select name="Navigation" class="navigation-page" onchange="navigate(this)">
+            <option value=""selected disabled hidden>Menu</option>
+            <option value="index.html">Accueil</option>
+            <option value="galerie.html">Galerie</option>
+            <option value="jeux.html">Jeux</option>
+        </select>
+
 
     </header>
 
@@ -31,13 +45,14 @@
 
         <div id="cards"></div> <!--la génération se fait de le JS-->
 
-       
-    </main class="main-footer">
 
-    <footer>
+    </main>
 
-        <img src="./photo/TMDB.svg" alt="logo de l'API utilisé" class="logo_API">
-
+    <footer class="main-footer">
+        <div class="bloc-API">
+            <p>API Utilisé</p>
+            <img src="./photo/TMDB.svg" alt="logo de l'API utilisé" class="logo-API">
+        </div>
     </footer>
 
     <script src="./script.js"></script>

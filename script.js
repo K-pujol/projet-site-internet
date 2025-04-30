@@ -99,3 +99,12 @@ function FilmRandom() {
 }
 
 boutonRandom.addEventListener('click', FilmRandom);
+
+//--------------dropdown------------------\\
+
+function navigate(select) {
+    const url = select.value;
+    if (url) {
+        window.location.href = url;
+    }
+}
