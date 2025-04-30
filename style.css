@@ -92,23 +92,18 @@
 
 /* --------------------------- Body ----------------------------------- */
 #cards-api, #cards-persos {
-
     max-width: 90%;
     margin: 1em auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 30px;
-
-
 }
 
 .card {
-
     border: 1px solid #999;
     border-radius: 3px;
     display: grid;
     grid-template-rows: max-content 200px 1fr;
-
 }
 
 .card img {
@@ -149,9 +144,6 @@ main {
     padding-bottom: 5%;
 }
 
-
-
-
 p {
     color: white;
 }
@@ -169,8 +161,8 @@ p {
     position: relative;
     font-weight: 1000;
     font-size: 17px;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(97, 11, 14, 0.8);
-    box-shadow: 4px 8px 19px -3px rgba(97, 11, 14, 0.8);
+    -webkit-box-shadow: 4px 8px 19px -3px #540f12;
+    box-shadow: 4px 8px 19px -3px #540f12;
     transition: all 250ms;
     overflow: hidden;
 }
@@ -185,8 +177,8 @@ p {
     border-radius: 15px;
     background-color: #540f12;
     z-index: -1;
-    -webkit-box-shadow: 4px 8px 19px -3px rgba(97, 11, 14, 0.8);
-    box-shadow: 4px 8px 19px -3px rgba(97, 11, 14, 0.8);
+    -webkit-box-shadow: 4px 8px 19px -3px #540f12;
+    box-shadow: 4px 8px 19px -3px #540f12;
     transition: all 250ms
 }
 
@@ -212,22 +204,16 @@ p {
     display: none;
 }
 
-
 /* From Uiverse.io by omriluz */
 #form-container {
-
-
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1001;
-    display: none;
-    
+    display: none;    
     width: 500px;    
     max-width: 90%;
-
-
     width: 400px;
     background: linear-gradient(#212121, #212121) padding-box,
         linear-gradient(145deg, transparent 35%, #540f12, #ff0000) border-box;
@@ -345,13 +331,7 @@ p {
     color: #fff;
 }
 
-
-
-
-
-
 /*---------------------Footer------------------*/
-
 
 .main-footer {
     display: flex;
@@ -369,10 +349,10 @@ p {
     width: 15rem;
 }
 
-
+/* -----------------------Affichage mobile--------------------- */
 @media screen and (max-width: 480px) {
 
-
+/* ---------------------------Header------------------------------ */
     .main-header {
         display: flex;
         align-items: center;
@@ -391,59 +371,23 @@ p {
         display: none;
     }
 
-    .bouton-centrer {
-        /* flex: 1; */
-        /* display: flex;
-        justify-content: center; */
-    }
-
     .navigation-page {
         display: block;
-
     }
 
-
-    .main-footer {
-        font-size: 1rem;
+    .logo {
+        width: 6rem;
     }
 
-    .logo-API {
-        width: 10rem;
+    /* ---------------------------body------------------------------ */
+
+    #ajout-film{
+margin-top: 20px;
     }
-
-
-
 
     body {
         padding-top: 100px;
         background-color: #212121;
-    }
-
-    .logo {
-
-        width: 6rem;
-
-    }
-
-    #page-title {
-        color: white;
-        font-size: 1rem;
-        margin: 0 auto;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        flex-grow: 1;
-        border-right: none;
-    }
-
-
-    .page-navigation {
-
-        color: white;
-        font-size: 1rem;
-        margin-right: 20px;
-
     }
 
 
@@ -455,11 +399,10 @@ p {
         gap: 20px;
     }
 
-
-
     /* From Uiverse.io by satyamchaudharydev */
     /* === removing default button style ===*/
     .button {
+        
         margin-right: 20px;
         height: auto;
         background: transparent;
@@ -484,4 +427,13 @@ p {
         -webkit-text-stroke: 1px var(--text-stroke-color);
     }
 
+}
+
+/* ----------------------------Footer------------------------ */
+.main-footer {
+    font-size: 1rem;
+}
+
+.logo-API {
+    width: 10rem;
 }
