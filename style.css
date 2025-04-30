@@ -79,7 +79,13 @@
 }
 
 .card footer {
-    background-color: #333;
+    background-color: #303030;
+    color: #fff;
+    padding: 0.5rem;
+}
+
+.card header {
+    background-color: #303030;
     color: #fff;
     padding: 0.5rem;
 }
@@ -87,6 +93,7 @@
 body {
     padding-top: 20%;
     background-color: #212121;
+    padding-bottom: 20%;
 }
 
 /* From Uiverse.io by satyamchaudharydev */
