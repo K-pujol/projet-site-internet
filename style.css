@@ -6,7 +6,6 @@
     align-items: center;
     height: 35%;
     background-color: rgba(97, 11, 14, 0.8);
-    /* même couleur avec 80% d'opacité */
     top: 0;
     left: 0;
     position: fixed;
@@ -16,15 +15,19 @@
 }
 
 .main-footer {
-    
+    display: flex;
+    justify-content: space-between;
     background-color: rgba(97, 11, 14, 0.8);
-    /* même couleur avec 80% d'opacité */
-    top: 0;
-    left: 0;
-    position: fixed;
+    height: 35%;
     width: 100%;
     z-index: 1000;
     backdrop-filter: blur(8px);
+    justify-content: right;
+    color: white;
+}
+
+.logo-API{
+    width: 15rem;
 }
 
 
@@ -105,7 +108,10 @@
 body {
     padding-top: 20%;
     background-color: #212121;
-    padding-bottom: 20%;
+}
+
+main{
+    padding-bottom: 5%;
 }
 
 /* From Uiverse.io by satyamchaudharydev */
@@ -171,8 +177,25 @@ body {
         width: 100%;
         z-index: 1000;
         padding: 1em;
-
     }
+
+    .main-header h1 {
+
+
+        
+    }
+
+
+.main-footer{
+    font-size: 1rem;
+}
+
+    .logo-API{
+        width: 10rem;
+    }
+
+
+
 
     body {
         padding-top: 100px;
@@ -208,14 +231,11 @@ body {
 
 
     #cards {
-
         max-width: 90%;
         margin: 1em auto;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
         gap: 20px;
-
-
     }
 
 
