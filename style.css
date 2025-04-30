@@ -175,7 +175,7 @@ p {
         top: 0;
         left: 0;
         position: fixed;
-        width: 93%;
+        width: 97%;
         padding: 1em;
         backdrop-filter: blur(8px);
     }
@@ -184,6 +184,12 @@ p {
         display: none;
     }
 
+    .bouton-centrer {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+    
     .navigation-page {
         display: block;
 
