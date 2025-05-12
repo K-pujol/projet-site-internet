@@ -195,11 +195,12 @@ if (formFilm) {
 
         // Ajouter l'icône SVG de fermeture
         const svgIcon = `
-        <img src=photo" alt="Fermer" width="24" height="24">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon">
+            <path fill="currentColor" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z"/>
+        </svg>
     `;
         closeBtn.innerHTML = svgIcon; // Insérer l'icône dans le bouton
 
-        // Ajouter l'événement pour supprimer la carte
         closeBtn.addEventListener('click', function () {
             carte.remove(); // Supprimer la carte
         });
@@ -286,13 +287,38 @@ if (formImage) {
         titreCarte.textContent = titre;
         headerCarte.appendChild(titreCarte);
 
+        const closeBtn = document.createElement('button');
+        closeBtn.classList.add('close-btn');
+
+        // Ajouter l'icône SVG de fermeture
+        const svgIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon">
+            <path fill="currentColor" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z"/>
+        </svg>
+    `;
+        closeBtn.innerHTML = svgIcon; // Insérer l'icône dans le bouton
+
+        closeBtn.addEventListener('click', function () {
+            carte.remove(); // Supprimer la carte
+        });
+
         const imageCarte = document.createElement('img');
         imageCarte.src = image;
         imageCarte.alt = `Image ${titre}`;
 
+        headerCarte.appendChild(closeBtn);
         carte.appendChild(headerCarte);
         carte.appendChild(imageCarte);
 
         document.getElementById("cards-images-perso").appendChild(carte);
     }
 }
+
+// ------------------------------- TRI ------------------------------- \\.
+
+const btnTrie = document.getElementById("trier");
+
+
+btnTrie.addEventListener("click", () => {
+    
+});
