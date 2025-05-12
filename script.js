@@ -320,5 +320,5 @@ const btnTrie = document.getElementById("trier");
 
 
 btnTrie.addEventListener("click", () => {
-    
+    conteneur.classList.toggle("mode-colonne");
 });
