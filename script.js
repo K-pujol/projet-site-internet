@@ -190,6 +190,20 @@ if (formFilm) {
         titreCarte.textContent = titre;
         headerCarte.appendChild(titreCarte);
 
+        const closeBtn = document.createElement('button');
+        closeBtn.classList.add('close-btn');
+
+        // Ajouter l'icône SVG de fermeture
+        const svgIcon = `
+        <img src=photo" alt="Fermer" width="24" height="24">
+    `;
+        closeBtn.innerHTML = svgIcon; // Insérer l'icône dans le bouton
+
+        // Ajouter l'événement pour supprimer la carte
+        closeBtn.addEventListener('click', function () {
+            carte.remove(); // Supprimer la carte
+        });
+
         const imageCarte = document.createElement('img');
         imageCarte.src = image;
         imageCarte.alt = `Affiche du film ${titre}`;
@@ -206,6 +220,7 @@ if (formFilm) {
         sortieCarte.textContent = annee;
         footerCarte.appendChild(sortieCarte);
 
+        headerCarte.appendChild(closeBtn);
         carte.appendChild(headerCarte);
         carte.appendChild(imageCarte);
         carte.appendChild(contenuCarte);
