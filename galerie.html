@@ -15,22 +15,72 @@
     <header class="main-header">
 
         <img src="./photo/logo.png" alt="logo site aktu" class="logo">
-       
 
+
+        <div class="navigation-centrer">
+            <a href="index.html">
+                <h1 class="lien-navigation"> Accueil </h1>
+            </a>
+
+            <a href="galerie.html">
+                <h1 class="lien-navigation"> Galerie</h1>
+            </a>
+
+            <a href="jeux.html">
+                <h1 class="lien-navigation"> Jeux</h1>
+            </a>
+        </div>
+
+
+
+        <button class="button" data-text="Awesome">
+            <span class="actual-text">&nbsp;Random&nbsp;</span>
+            <span aria-hidden="true" class="hover-text">&nbsp;Random&nbsp;</span>
+        </button>
+
+
+        <!-- bouton "dropdown" !-->
         <select name="Navigation" class="navigation-page" onchange="navigate(this)">
-            <option value=""selected disabled hidden>Menu</option>
+            <option value="" selected disabled hidden>Menu</option>
             <option value="index.html">Accueil</option>
             <option value="galerie.html">Galerie</option>
             <option value="jeux.html">Jeux</option>
         </select>
 
-
     </header>
 
     <main>
 
-        <p>GALERIE</p>
+        <button id="ajout-film"> Ajoutez une image ! </button>
+        <button id="trier"> Trier </button>
 
+        <div id="cards-images"></div>
+        <div id="cards-images-perso"></div>
+
+        <div id="overlay">
+            <div id="form-container" style="display:none">
+                <form id="form-galerie" class="form" autocomplete="off">
+
+                    <div class="form-group">
+                        <label for="tImage">Titre image:</label><br>
+                        <input type="text" id="tImage" name="tImage"><br><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="poster">Lien vers l'image :</label>
+                        <input type="url" id="poster" name="poster" placeholder="https://exemple.com/image.jpg">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="posterFile">Ou choisir une image sur votre ordinateur :</label>
+                        <input type="file" id="posterFile" name="posterFile" accept="image/*">
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">Valider !</button>
+
+                </form>
+            </div>
+        </div>
 
     </main>
 

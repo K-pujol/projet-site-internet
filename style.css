@@ -99,6 +99,17 @@
     gap: 30px;
 }
 
+#cards-images{
+    max-width: 90%;
+    margin: 1em auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+ }
+
+
+
 .card {
     border: 1px solid #999;
     border-radius: 3px;
@@ -151,7 +162,7 @@ p {
 /* -------------------------------bouton AJOUT------------------------------ */
 
 /* From Uiverse.io by alexroumi */
-#ajout-film {
+#ajout-film, #trier {
     padding: 15px 25px;
     border: unset;
     border-radius: 15px;
@@ -167,7 +178,7 @@ p {
     overflow: hidden;
 }
 
-#ajout-film::before {
+#ajout-film::before, #trier::before {
     content: "";
     position: absolute;
     top: 0;
@@ -182,12 +193,18 @@ p {
     transition: all 250ms
 }
 
-#ajout-film:hover {
+#ajout-film:hover, #trier:hover {
     color: #e8e8e8;
 }
 
-#ajout-film:hover::before {
+#ajout-film:hover::before, #trier:hover::before {
     width: 100%;
+}
+
+
+#trier{
+    position: absolute;
+    right: 1%;
 }
 
 /* ----------------------------Formulaire--------------------------------- */
@@ -399,6 +416,8 @@ margin-top: 20px;
         gap: 20px;
     }
 
+    
+
     /* From Uiverse.io by satyamchaudharydev */
     /* === removing default button style ===*/
     .button {
@@ -437,3 +456,6 @@ margin-top: 20px;
 .logo-API {
     width: 10rem;
 }
+
+/* ----------------------------------PAGE GALERIE---------------------------------- */
+

@@ -15,15 +15,37 @@
     <header class="main-header">
 
         <img src="./photo/logo.png" alt="logo site aktu" class="logo">
-       
 
+
+        <div class="navigation-centrer">
+            <a href="index.html">
+                <h1 class="lien-navigation"> Accueil </h1>
+            </a>
+
+            <a href="galerie.html">
+                <h1 class="lien-navigation"> Galerie</h1>
+            </a>
+
+            <a href="jeux.html">
+                <h1 class="lien-navigation"> Jeux</h1>
+            </a>
+        </div>
+
+
+
+        <button class="button" data-text="Awesome">
+            <span class="actual-text">&nbsp;Random&nbsp;</span>
+            <span aria-hidden="true" class="hover-text">&nbsp;Random&nbsp;</span>
+        </button>
+
+
+        <!-- bouton "dropdown" !-->
         <select name="Navigation" class="navigation-page" onchange="navigate(this)">
-            <option value=""selected disabled hidden>Menu</option>
+            <option value="" selected disabled hidden>Menu</option>
             <option value="index.html">Accueil</option>
             <option value="galerie.html">Galerie</option>
             <option value="jeux.html">Jeux</option>
         </select>
-
 
     </header>
 
