@@ -15,22 +15,178 @@
     <header class="main-header">
 
         <img src="./photo/logo.png" alt="logo site aktu" class="logo">
-       
 
-        <select name="Navigation" class="navigation-page" onchange="navigate(this)">
-            <option value=""selected disabled hidden>Menu</option>
-            <option value="index.html">Accueil</option>
-            <option value="galerie.html">Galerie</option>
-            <option value="jeux.html">Jeux</option>
-        </select>
 
+        <div class="navigation-centrer">
+            <a href="index.html">
+                <h1 class="lien-navigation"> Accueil </h1>
+            </a>
+
+            <a href="galerie.html">
+                <h1 class="lien-navigation"> Galerie</h1>
+            </a>
+
+            <a href="jeux.html">
+                <h1 class="lien-navigation"> Jeux</h1>
+            </a>
+        </div>
+
+
+
+        <button class="button-random" data-text="Awesome">
+            <span class="actual-text">&nbsp;Random&nbsp;</span>
+            <span aria-hidden="true" class="hover-text">&nbsp;Random&nbsp;</span>
+        </button>
+
+
+        <!-- bouton "dropdown" !-->
+
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+
+            <ul class="menu__box">
+                <li><a class="menu__item" href="index.html">Accueil</a></li>
+                <li><a class="menu__item" href="galerie.html">Galerie</a></li>
+                <li><a class="menu__item" href="jeux.html">Jeux</a></li>
+            </ul>
+        </div>
 
     </header>
 
     <main>
 
-        <p>GALERIE</p>
+        <button id="ajout-film"> Ajoutez une image ! </button>
+        <button id="trier"> Trier </button>
 
+        <div id="cards-images-perso"></div>
+        <div id="cards-images"></div>
+
+
+        <div id="overlay">
+            <div id="form-container" style="display:none">
+                <form id="form-galerie" class="form" autocomplete="off">
+
+                    <div class="form-group">
+                        <label for="tImage">Titre image:</label><br>
+                        <input type="text" id="tImage" name="tImage"><br><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="poster">Lien vers l'image :</label>
+                        <input type="url" id="poster" name="poster" placeholder="https://exemple.com/image.jpg">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="posterFile">Ou choisir une image sur votre ordinateur :</label>
+                        <input type="file" id="posterFile" name="posterFile" accept="image/*">
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">Valider !</button>
+
+                </form>
+            </div>
+        </div>
+
+
+        <!-- Conteneur principal pour le carrousel -->
+        <div class="container">
+            <!-- Élément carrousel -->
+            <div class="carousel">
+                <!-- Conteneur interne pour les diapositives -->
+                <div class="carousel-inner">
+                    <!-- Première diapositive -->
+                    <div class="slide">
+                        <!-- Image de la première diapositive -->
+                        <img src="https://images.pexels.com/photos/31997961/pexels-photo-31997961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 1">
+                    </div>
+                    <!-- Deuxième diapositive -->
+                    <div class="slide">
+                        <!-- Image de la deuxième diapositive -->
+                        <img src="https://images.pexels.com/photos/25786712/pexels-photo-25786712/free-photo-of-paysage-montagnes-ete-foret.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 2">
+                    </div>
+                    <!-- Troisième diapositive -->
+                    <div class="slide">
+                        <!-- Image de la troisième diapositive -->
+                        <img src="https://images.pexels.com/photos/32026935/pexels-photo-32026935/free-photo-of-gouttelettes-d-eau-dynamiques-sur-fond-bleu.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 3">
+                    </div>
+                    <!-- Quatrième diapositive -->
+                    <div class="slide">
+                        <!-- Image de la quatrième diapositive -->
+                        <img src="https://images.pexels.com/photos/32024993/pexels-photo-32024993/free-photo-of-un-indien-rural-a-velo-a-travers-les-champs-a-hata.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 4">
+                    </div>
+                    <!-- Cinquième diapositive -->
+                    <div class="slide">
+                        <!-- Image de la cinquième diapositive -->
+                        <img src="https://images.pexels.com/photos/32021724/pexels-photo-32021724/free-photo-of-majestueux-grand-heron-bleu-en-vol-au-dessus-de-l-eau.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 5">
+                    </div>
+                    <div class="slide">
+                        <!-- Image de la cinquième diapositive -->
+                        <img src="https://images.pexels.com/photos/32021762/pexels-photo-32021762/free-photo-of-fraises.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 6">
+                    </div>
+
+                </div>
+                <!-- Conteneur pour les boutons de navigation -->
+                <div class="carousel-controls">
+                    <!-- Bouton pour passer à la diapositive précédente -->
+
+
+
+                    <button id="prev">
+                        <div class="button-box">
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40">
+                                    <path
+                                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </div>
+                    </button>
+
+
+
+                    <button id="next">
+                        <div class="button-box">
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40">
+                                    <path
+                                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </div>
+                    </button>
+
+
+
+                </div>
+                <!-- Conteneur pour les points de navigation -->
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
 
     </main>
 

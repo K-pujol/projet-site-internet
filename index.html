@@ -32,20 +32,26 @@
         </div>
 
 
-    
-        <button class="button" data-text="Awesome">
+        <button class="button-random" data-text="Awesome">
             <span class="actual-text">&nbsp;Random&nbsp;</span>
             <span aria-hidden="true" class="hover-text">&nbsp;Random&nbsp;</span>
         </button>
-        
 
-<!-- bouton "dropdown" -->
-        <select name="Navigation" class="navigation-page" onchange="navigate(this)">
-            <option value="" selected disabled hidden>Menu</option>
-            <option value="index.html">Accueil</option>
-            <option value="galerie.html">Galerie</option>
-            <option value="jeux.html">Jeux</option>
-        </select>
+
+        <!-- bouton "dropdown" !-->
+
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+
+            <ul class="menu__box">
+                <li><a class="menu__item" href="index.html">Accueil</a></li>
+                <li><a class="menu__item" href="galerie.html">Galerie</a></li>
+                <li><a class="menu__item" href="jeux.html">Jeux</a></li>
+            </ul>
+        </div>
 
 
     </header>
@@ -60,7 +66,7 @@
 
         <div id="overlay">
             <div id="form-container" style="display:none">
-                <form class="form" autocomplete="off">
+                <form id="form-film" class="form" autocomplete="off">
 
                     <div class="form-group">
                         <label for="tfilm">Titre film:</label><br>
