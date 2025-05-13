@@ -32,21 +32,36 @@
         </div>
 
 
-    
         <button class="button" data-text="Awesome">
             <span class="actual-text">&nbsp;Random&nbsp;</span>
             <span aria-hidden="true" class="hover-text">&nbsp;Random&nbsp;</span>
         </button>
-        
 
-<!-- bouton "dropdown" !-->
-        <select name="Navigation" class="navigation-page" onchange="navigate(this)">
-            <option value="" selected disabled hidden>Menu</option>
-            <option value="index.html">Accueil</option>
-            <option value="galerie.html">Galerie</option>
-            <option value="jeux.html">Jeux</option>
-        </select>
 
+        <!-- bouton "dropdown" !-->
+
+        <div id="overlay-dropdown">
+
+            <body>
+                <nav>
+                    <div class="navbar">
+                        <div class="container nav-container">
+                            <input class="checkbox" type="checkbox" name="" id="" />
+                            <div class="hamburger-lines">
+                                <span class="line line1"></span>
+                                <span class="line line2"></span>
+                                <span class="line line3"></span>
+                            </div>
+                            <div class="menu-items">
+                                <li><a href="index.html">Accueil</a></li>
+                                <li><a href="galerie.html">Galerie</a></li>
+                                <li><a href="jeux.html">Jeux</a></li>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </body>
+        </div>
     </header>
 
     <main>
