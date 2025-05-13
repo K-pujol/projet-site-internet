@@ -72,7 +72,6 @@
     overflow: hidden;
     transition: 0.5s;
     -webkit-text-stroke: 1px var(--animation-color);
-
 }
 
 /* hover */
@@ -81,14 +80,10 @@
     filter: drop-shadow(0 0 23px var(--animation-color))
 }
 
-
 .navigation-page {
-
     display: none;
     margin-right: 20px;
-
 }
-
 
 .hamburger-menu{
     display: none;
@@ -436,12 +431,6 @@ p {
 /* ----------------------------------PAGE GALERIE---------------------------------- */
 
 
-/* Suppression des marges et des bords pour html et body */
-html,
-body {
-    padding: 0;
-    margin: 0;
-}
 /* Définition d'un container pour gérer l'affichage */
 .container {
     overflow: hidden;
@@ -455,14 +444,11 @@ body {
 /* Définition de l'élément contenant les diapositives */
 .carousel-inner {
     display: flex;
-    /* Affiche les éléments en ligne */
-    overflow: hidden;
-    /* Cache les éléments qui dépassent */
-    height: 100vh;
-    /* Hauteur égale à 100% de la hauteur de la vue */
     flex-wrap: nowrap;
-    /* Empêche les éléments de se placer sur plusieurs lignes */
+    height: 100vh;
+    width: 100%; /* Assurez-vous que le conteneur prend toute la largeur */
 }
+
 /* Définition des diapositives */
 .slide {
     flex: 0 0 100%;
@@ -474,9 +460,10 @@ body {
 }
 /* Définition de l'affichage de l'image de chaque diapositive */
 .slide img {
+    padding-top: 10%;
     width: 100%;
     /* Largeur de l'image est de 100% */
-    height: 100%;
+    height: 80%;
     /* Hauteur de l'image est de 100% */
     object-fit: cover;
     /* Couvre tout l'espace disponible */
@@ -538,6 +525,7 @@ body {
     border: 10px solid #540f12 !important;
     /* !important permet de surcharger les autres styles éventuels */
 }
+
 .carousel-dots .inactive {
     /* Border de 10px pour les points inactifs */
     border: 10px solid #303030;
@@ -547,6 +535,7 @@ body {
 /* -----------------------------BOUTON CARROUSSEL GAUCHE ------------------------------ */
 
 /* From Uiverse.io by xopc333 */ 
+
 #prev {
     display: block;
     position: relative;
@@ -621,7 +610,6 @@ body {
 
 /* ------------------------------- BOUTON CARROUSSEL DROITE -------------------------------- */
 
-/* Flèche suivante */
 #next {
     display: block;
     position: relative;
@@ -888,7 +876,4 @@ body {
 
 .logo-API {
     width: 10rem;
-}
-
-
-  
+}  

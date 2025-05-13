@@ -25,6 +25,7 @@ fetch(`https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=${pageAl
     .then(data => {
         const films = data.results;
         afficherCartesFilms(films, nbAffiche, conteneur, mode);
+        chargerImagesCarrousel(films, 3, document.querySelector('.carousel-inner'));
     })
 
 
@@ -328,8 +329,6 @@ btnTrie.addEventListener("click", () => {
 
 // Ceci est une fonction auto - exécutable.Les fonctions auto - exécutables sont des fonctions qui s'exécutent immédiatement après leur déclaration, sans avoir besoin d'être appelées.Les accolades immédiatement après la déclaration de la fonction et les parenthèses à la fin de la déclaration définissent la fonction et permettent de l'exécuter immédiatement.
 (function () {
-    // Utilisation de la directive "use strict" pour activer le mode strict en JavaScript. Cela implique une meilleure gestion des erreurs et une syntaxe plus stricte pour le code.
-    "use stict"
     // Déclare la constante pour la durée de chaque slide
     const slideTimeout = 5000;
     // Récupère les boutons de navigation
@@ -387,3 +386,31 @@ btnTrie.addEventListener("click", () => {
         }, false);
      })
 })()
+
+
+
+// -------------------------------- IMAGE CARROUSEL ----------------------------- \\
+
+function chargerImagesCarrousel(films, nbImages, conteneurCarousel) {
+    const max = Math.min(nbImages, films.length);
+
+    for (let i = 0; i < max; i++) {
+        const film = films[i];
+        const imageUrl = 'https://image.tmdb.org/t/p/w500' + film.poster_path;
+
+        // Création de la slide
+        const slide = document.createElement('div');
+        slide.classList.add('slide');
+
+        // Création de l'image
+        const image = document.createElement('img');
+        image.src = imageUrl;
+        image.alt = `Affiche du film ${film.title}`;
+
+        // Ajout de l'image à la slide
+        slide.appendChild(image);
+
+        // Ajout de la slide au carrousel
+        conteneurCarousel.appendChild(slide);
+    }
+}
