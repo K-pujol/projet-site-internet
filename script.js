@@ -388,7 +388,6 @@ btnTrie.addEventListener("click", () => {
 })()
 
 
-
 // -------------------------------- IMAGE CARROUSEL ----------------------------- \\
 
 function chargerImagesCarrousel(films, nbImages, conteneurCarousel) {
