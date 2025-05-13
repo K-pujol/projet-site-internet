@@ -349,7 +349,7 @@ btnTrie.addEventListener("click", () => {
         // Boucle sur tous les éléments de type "slide" pour les déplacer
         $slides.forEach($elt => $elt.style.transform = `translateX(-${currentSlide * 100}%)`);
         // Boucle sur tous les "dots" pour mettre à jour la couleur par la classe "active" ou "inactive"
-        $dots.forEach(($elt, key) => $elt.classList = `dot ${key === currentSlide? 'active': 'inactive'}`);
+        $dots.forEach(($elt, key) => $elt.classList = `dot ${key === currentSlide ? 'active' : 'inactive'}`);
     }
     // Fonction pour afficher le prochain slide
     function showSlide() {
@@ -384,7 +384,7 @@ btnTrie.addEventListener("click", () => {
         $elt.addEventListener('mouseout', () => {
             intervalId = setInterval(showSlide, slideTimeout);
         }, false);
-     })
+    })
 })()
 
 
@@ -393,6 +393,9 @@ btnTrie.addEventListener("click", () => {
 
 function chargerImagesCarrousel(films, nbImages, conteneurCarousel) {
     const max = Math.min(nbImages, films.length);
+
+    // Vider le conteneur du carrousel
+    conteneurCarousel.innerHTML = '';
 
     for (let i = 0; i < max; i++) {
         const film = films[i];
@@ -413,4 +416,45 @@ function chargerImagesCarrousel(films, nbImages, conteneurCarousel) {
         // Ajout de la slide au carrousel
         conteneurCarousel.appendChild(slide);
     }
+
+    // Réinitialiser les points de navigation
+    const dotsContainer = document.querySelector('.carousel-dots');
+    dotsContainer.innerHTML = '';
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot', index === 0 ? 'active' : 'inactive');
+        dot.dataset.slidId = index;
+        dotsContainer.appendChild(dot);
+    });
+
+    // Réinitialiser le comportement du carrousel
+    initialiserCarrousel();
+}
+
+function initialiserCarrousel() {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+
+    function slideTo(index) {
+        currentSlide = index >= slides.length ? 0 : index < 0 ? slides.length - 1 : index;
+        slides.forEach((slide, i) => {
+            slide.style.transform = `translateX(-${currentSlide * 100}%)`;
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+            dot.classList.toggle('inactive', i !== currentSlide);
+        });
+    }
+
+    document.querySelector('#prev').onclick = () => slideTo(currentSlide - 1);
+    document.querySelector('#next').onclick = () => slideTo(currentSlide + 1);
+    dots.forEach((dot, i) => {
+        dot.onclick = () => slideTo(i);
+    });
+
+    // Auto défilement
+    clearInterval(window.carouselInterval);
+    window.carouselInterval = setInterval(() => slideTo(currentSlide + 1), 5000);
 }
