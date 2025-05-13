@@ -432,6 +432,271 @@ p {
     gap: 1rem;
 }
 
+
+/* ----------------------------------PAGE GALERIE---------------------------------- */
+
+
+/* Suppression des marges et des bords pour html et body */
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+/* Définition d'un container pour gérer l'affichage */
+.container {
+    overflow: hidden;
+    /* Cache les éléments qui dépassent du container */
+}
+/* Définition du carousel */
+.carousel {
+    position: relative;
+    /* Le carousel est positionné relativement à son parent */
+}
+/* Définition de l'élément contenant les diapositives */
+.carousel-inner {
+    display: flex;
+    /* Affiche les éléments en ligne */
+    overflow: hidden;
+    /* Cache les éléments qui dépassent */
+    height: 100vh;
+    /* Hauteur égale à 100% de la hauteur de la vue */
+    flex-wrap: nowrap;
+    /* Empêche les éléments de se placer sur plusieurs lignes */
+}
+/* Définition des diapositives */
+.slide {
+    flex: 0 0 100%;
+    /* Largeur de chaque diapositive est de 100% */
+    height: 100%;
+    /* Hauteur de chaque diapositive est de 100% */
+    transition: .5s ease-in-out;
+    /* Ajout d'une animation douce pour la transition entre les diapositives */
+}
+/* Définition de l'affichage de l'image de chaque diapositive */
+.slide img {
+    width: 100%;
+    /* Largeur de l'image est de 100% */
+    height: 100%;
+    /* Hauteur de l'image est de 100% */
+    object-fit: cover;
+    /* Couvre tout l'espace disponible */
+}
+/* Définition des boutons de contrôle du carousel */
+.carousel-controls {
+    position: absolute;
+    /* Les boutons sont absolument positionnés */
+    z-index: 5;
+    /* Ils sont placés au-dessus des autres éléments */
+    left: 10%;
+    /* La distance à gauche est de 10% */
+    right: 10%;
+    /* La distance à droite est de 10% */
+    top: 50%;
+    /* La distance du haut est de 50% */
+    display: flex;
+    /* Affiche les boutons en ligne */
+    justify-content: space-between;
+    /* Espacement égal entre les boutons */
+}
+/* Style des boutons de contrôle */
+.carousel-controls button {
+    padding: 10px;
+    /* Ajout de padding pour un meilleur contrôle */
+    background-color: aquamarine;
+    /* Arrière-plan en aquamarine */
+}
+/* Définition des points de contrôle */
+.carousel-dots {
+    position: absolute;
+    /* Les points sont absolument positionnés */
+    z-index: 5;
+    /* Ils sont placés au-dessus des autres éléments */
+    left: 50%;
+    /* La distance à gauche est de 50% */
+    right: 50%;
+    /* La distance à droite est de 50% */
+    bottom: 10%;
+    /*La distance du bas est de 10% */
+    display: flex;
+    /* Affiche les points en ligne */
+    justify-content: center;
+    /* Centrage des points */
+}
+/* Style des points de contrôle */
+.carousel-dots .dot {
+    border-radius: 50%;
+    /* Les points sont en forme de cercle */
+    margin: 5px;
+    /* Ajout d'un margin pour un meilleur contrôle */
+    cursor: pointer;
+    /* Curseur en forme de main pour un meilleur contrôle */
+    transition: .5s ease-in-out;
+}
+/* Styles pour les points de navigation du carrousel */
+.carousel-dots .active {
+    /* Border de 10px pour le point actif */
+    border: 10px solid #540f12 !important;
+    /* !important permet de surcharger les autres styles éventuels */
+}
+.carousel-dots .inactive {
+    /* Border de 10px pour les points inactifs */
+    border: 10px solid #303030;
+}   
+
+
+/* -----------------------------BOUTON CARROUSSEL GAUCHE ------------------------------ */
+
+/* From Uiverse.io by xopc333 */ 
+#prev {
+    display: block;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    margin: 0;
+    overflow: hidden;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+  }
+  
+  #prev:before,
+  #prev:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 7px;
+  }
+  
+  #prev:before {
+    border: 4px solid #f0eeef;
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+  }
+  
+  #prev:after {
+    border: 4px solid #540f12;
+    transform: scale(1.3);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+  }
+  #prev:hover:before,
+  #prev:focus:before {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  #prev:hover:after,
+  #prev:focus:after {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+  }
+  
+  .button-box {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .button-elem {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 17px 18px 0 18px;
+    transform: rotate(180deg);
+    fill: #f0eeef;
+  }
+  
+  #prev:hover .button-box,
+  #prev:focus .button-box {
+    transition: 0.4s;
+    transform: translateX(-56px);
+  }
+
+/* ------------------------------- BOUTON CARROUSSEL DROITE -------------------------------- */
+
+/* Flèche suivante */
+#next {
+    display: block;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    margin: 0;
+    overflow: hidden;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+  }
+  
+  #next:before,
+  #next:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 7px;
+  }
+  
+  #next:before {
+    border: 4px solid #f0eeef;
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+  }
+  
+  #next:after {
+    border: 4px solid #540f12;
+    transform: scale(1.3);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+  }
+  #next:hover:before,
+  #next:focus:before {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+      transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  #next:hover:after,
+  #next:focus:after {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+      transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+  }
+  
+  .button-box {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  #next .button-elem {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 19px 18px 0 18px;
+    transform: rotate(0deg);
+    fill: #f0eeef; 
+    
+  }
+  
+  #next:hover .button-box,
+  #next:focus .button-box {
+    transition: 0.4s;
+    transform: translateX(-56px);
+  }
+
+
+
 /* -----------------------Affichage mobile--------------------- */
 @media screen and (max-width: 480px) {
 
@@ -625,4 +890,5 @@ p {
     width: 10rem;
 }
 
-/* ----------------------------------PAGE GALERIE---------------------------------- */
+
+  

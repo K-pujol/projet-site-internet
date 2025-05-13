@@ -40,7 +40,7 @@
 
 
         <!-- bouton "dropdown" !-->
-        
+
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox" />
             <label class="menu__btn" for="menu__toggle">
@@ -63,7 +63,7 @@
 
         <div id="cards-images-perso"></div>
         <div id="cards-images"></div>
-       
+
 
         <div id="overlay">
             <div id="form-container" style="display:none">
@@ -87,6 +87,104 @@
                     <button type="submit" class="form-submit-btn">Valider !</button>
 
                 </form>
+            </div>
+        </div>
+
+
+        <!-- Conteneur principal pour le carrousel -->
+        <div class="container">
+            <!-- Élément carrousel -->
+            <div class="carousel">
+                <!-- Conteneur interne pour les diapositives -->
+                <div class="carousel-inner">
+                    <!-- Première diapositive -->
+                    <div class="slide">
+                        <!-- Image de la première diapositive -->
+                        <img src="https://images.pexels.com/photos/31997961/pexels-photo-31997961.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 1">
+                    </div>
+                    <!-- Deuxième diapositive -->
+                    <div class="slide">
+                        <!-- Image de la deuxième diapositive -->
+                        <img src="https://images.pexels.com/photos/25786712/pexels-photo-25786712/free-photo-of-paysage-montagnes-ete-foret.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 2">
+                    </div>
+                    <!-- Troisième diapositive -->
+                    <div class="slide">
+                        <!-- Image de la troisième diapositive -->
+                        <img src="https://images.pexels.com/photos/32026935/pexels-photo-32026935/free-photo-of-gouttelettes-d-eau-dynamiques-sur-fond-bleu.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 3">
+                    </div>
+                    <!-- Quatrième diapositive -->
+                    <div class="slide">
+                        <!-- Image de la quatrième diapositive -->
+                        <img src="https://images.pexels.com/photos/32024993/pexels-photo-32024993/free-photo-of-un-indien-rural-a-velo-a-travers-les-champs-a-hata.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 4">
+                    </div>
+                    <!-- Cinquième diapositive -->
+                    <div class="slide">
+                        <!-- Image de la cinquième diapositive -->
+                        <img src="https://images.pexels.com/photos/32021724/pexels-photo-32021724/free-photo-of-majestueux-grand-heron-bleu-en-vol-au-dessus-de-l-eau.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 5">
+                    </div>
+                    <div class="slide">
+                        <!-- Image de la cinquième diapositive -->
+                        <img src="https://images.pexels.com/photos/32021762/pexels-photo-32021762/free-photo-of-fraises.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            alt="Image 6">
+                    </div>
+
+                </div>
+                <!-- Conteneur pour les boutons de navigation -->
+                <div class="carousel-controls">
+                    <!-- Bouton pour passer à la diapositive précédente -->
+
+
+
+                    <button id="prev">
+                        <div class="button-box">
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40">
+                                    <path
+                                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </div>
+                    </button>
+
+
+
+                    <button id="next">
+                        <div class="button-box">
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="button-elem">
+                                <svg viewBox="0 0 46 40">
+                                    <path
+                                        d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </div>
+                    </button>
+
+
+
+                </div>
+                <!-- Conteneur pour les points de navigation -->
+                <div class="carousel-dots"></div>
             </div>
         </div>
 
