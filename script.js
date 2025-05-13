@@ -83,7 +83,7 @@ function afficherCartesFilms(films, nbCarte, conteneurCarte, mode = "complet") {
 
 
 
-const boutonRandom = document.querySelector('.button');
+const boutonRandom = document.querySelector('.button-random');
 
 function FilmRandom() {
     const maxPages = 500;
