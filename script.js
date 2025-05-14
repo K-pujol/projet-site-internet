@@ -25,7 +25,7 @@ fetch(`https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&page=${pageAl
     .then(data => {
         const films = data.results;
         afficherCartesFilms(films, nbAffiche, conteneur, mode);
-        chargerImagesCarrousel(films, 3, document.querySelector('.carousel-inner'));
+        chargerImagesCarrousel(films, 6, document.querySelector('.carousel-inner'));
     })
 
 
@@ -420,7 +420,7 @@ function chargerImagesCarrousel(films, nbImages, conteneurCarousel) {
     const dotsContainer = document.querySelector('.carousel-dots');
     dotsContainer.innerHTML = '';
     const slides = document.querySelectorAll('.slide');
-    slides.forEach((_, index) => {
+    slides.forEach((_, index) => { // Pour chaque slide dans la liste slides, exécute la fonction avec deux paramètres, mais ignore le premier (la slide elle-même) et utilise juste l’index.
         const dot = document.createElement('span');
         dot.classList.add('dot', index === 0 ? 'active' : 'inactive');
         dot.dataset.slidId = index;
