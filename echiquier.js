@@ -1,6 +1,6 @@
 let plateau = Array.from({ length: 8 }, () => Array(8).fill(0));
-const taille_case = 70;
-const plateau_y = taille_case / 2;
+let taille_case;
+let plateau_y;
 const nbLignes = plateau.length;
 const nbColonnes = plateau[0].length;
 let pieces = [];
@@ -45,16 +45,34 @@ function preload() {
     tour_b_Image = loadImage("./photo/echiquier/tour_b.png");
 }
 
+function getTailleCase() {
+    if (window.innerWidth < 480) {
+        return 50;
+    }
+    return 70;
+}
+
+function getPlateauY() {
+    return taille_case / 2;
+  }
+  
 
 
 function setup() {
+    taille_case = getTailleCase(); // Affecte la bonne taille au bon moment
 
     const largeur = taille_case * nbColonnes;
     const hauteur = taille_case * nbLignes;
+
     const canvas = createCanvas(largeur, hauteur);
     canvas.parent("sketch-container");
+
+    taille_case = getTailleCase();
+
     initialiserPieces();
+    // noLoop();
 }
+
 
 function initialiserPieces() {
     pieces = [];
@@ -95,7 +113,7 @@ function draw() {
             if ((x + y) % 2 === 0) {
                 fill(234, 218, 248);
             } else {
-                fill(151, 118, 179);
+                fill(84, 15, 18);
             }
             rect(x * taille_case, y * taille_case, taille_case, taille_case);
         }
@@ -177,6 +195,9 @@ function draw() {
             fill(255);
         }
     }
+
+    console.log("taille_case:", taille_case, "| plateau_y:", getPlateauY());
+
 }
 
 
@@ -367,8 +388,8 @@ document.getElementById("startBtn").addEventListener("click", () => {
         Array(plateau[0].length).fill(false)
     );
 
-    // Optionnel : clear canvas (sinon le nouveau redraw écrasera l’ancien)
-    clear();
+    taille_case = getTailleCase(); // re-adapte taille
+    resizeCanvas(taille_case * nbColonnes, taille_case * nbLignes);
 
     // Réinitialise les pièces et relance l'affichage
     initialiserPieces();
