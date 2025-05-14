@@ -27,40 +27,37 @@ let selectedPiece = null;
 let upgrade = false;
 let pion_a_upgrade = null;
 
-let launched = false;
-
 // ------------------------------------------------------------------//
 
 function preload() {
-    Pion_n_Image = loadImage("pion_n.png");
-    roi_n_Image = loadImage("roi_n.png");
-    reine_n_Image = loadImage("reine_n.png");
-    fou_n_Image = loadImage("fou_n.png");
-    cavalier_n_Image = loadImage("cavalier_n.png");
-    tour_n_Image = loadImage("tour_n.png");
+    Pion_n_Image = loadImage("./photo/echiquier/pion_n.png");
+    roi_n_Image = loadImage("./photo/echiquier/roi_n.png");
+    reine_n_Image = loadImage("./photo/echiquier/reine_n.png");
+    fou_n_Image = loadImage("./photo/echiquier/fou_n.png");
+    cavalier_n_Image = loadImage("./photo/echiquier/cavalier_n.png");
+    tour_n_Image = loadImage("./photo/echiquier/tour_n.png");
 
-    Pion_b_Image = loadImage("pion_b.png");
-    roi_b_Image = loadImage("roi_b.png");
-    reine_b_Image = loadImage("reine_b.png");
-    fou_b_Image = loadImage("fou_b.png");
-    cavalier_b_Image = loadImage("cavalier_b.png");
-    tour_b_Image = loadImage("tour_b.png");
+    Pion_b_Image = loadImage("./photo/echiquier/pion_b.png");
+    roi_b_Image = loadImage("./photo/echiquier/roi_b.png");
+    reine_b_Image = loadImage("./photo/echiquier/reine_b.png");
+    fou_b_Image = loadImage("./photo/echiquier/fou_b.png");
+    cavalier_b_Image = loadImage("./photo/echiquier/cavalier_b.png");
+    tour_b_Image = loadImage("./photo/echiquier/tour_b.png");
 }
 
 
 
 function setup() {
 
-    if (!launched) {
-        noCanvas(); // Ne crée rien au début
-        return;
-    }
-
     const largeur = taille_case * nbColonnes;
     const hauteur = taille_case * nbLignes;
-    createCanvas(largeur, hauteur);
+    const canvas = createCanvas(largeur, hauteur);
     canvas.parent("sketch-container");
+    initialiserPieces();
+}
 
+function initialiserPieces() {
+    pieces = [];
 
     // Noirs
     for (let x = 0; x < 8; x++) {
@@ -91,6 +88,7 @@ function setup() {
 
 
 function draw() {
+
 
     for (let y = 0; y < plateau.length; y++) {
         for (let x = 0; x < plateau[y].length; x++) {
@@ -196,7 +194,6 @@ function piece_presente() {
             break;
         }
     }
-    console.log(piece_presente);
 }
 
 
@@ -340,8 +337,6 @@ function mouseClicked() {
 
         selectedPiece = null;
     }
-
-    console.log("case cliquée", x + 1, y + 1);
 }
 
 function mousePressed() {
@@ -360,8 +355,23 @@ function mousePressed() {
     }
 }
 
+// -----------------------Démarrer partie----------------------------//
 
 document.getElementById("startBtn").addEventListener("click", () => {
-    launched = true;
-    redraw(); // Déclenche setup() à nouveau
+    // Réinitialisation complète
+    selectedPiece = null;
+    upgrade = false;
+    pion_a_upgrade = null;
+    pieces = [];
+    cases_occupees = Array.from({ length: plateau.length }, () =>
+        Array(plateau[0].length).fill(false)
+    );
+
+    // Optionnel : clear canvas (sinon le nouveau redraw écrasera l’ancien)
+    clear();
+
+    // Réinitialise les pièces et relance l'affichage
+    initialiserPieces();
+    redraw(); // Appelle une fois draw() 
 });
+
