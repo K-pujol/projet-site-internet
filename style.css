@@ -897,11 +897,6 @@ p {
         -webkit-text-stroke: 1px var(--text-stroke-color);
     }
 
-    #sketch-container {
-        
-        
-      }
-
       #startBtn {
         position: absolute;
         top: 30%;
