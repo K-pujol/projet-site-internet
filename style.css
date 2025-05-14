@@ -683,6 +683,32 @@ p {
     transform: translateX(-56px);
   }
 
+/* --------------------------------PAGE JEUX--------------------------------------- */
+
+#sketch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* prend toute la hauteur de la fenêtre */
+  }
+  
+#startBtn {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    background-color: #540f12;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+
+
 
 
 /* -----------------------Affichage mobile--------------------- */
@@ -834,6 +860,10 @@ p {
         display: none;
     }
 
+    body.jeux-no-scroll {
+        overflow: hidden;
+        height: 100vh;
+      }
 
 
     /* From Uiverse.io by satyamchaudharydev */
@@ -867,7 +897,25 @@ p {
         -webkit-text-stroke: 1px var(--text-stroke-color);
     }
 
+      #startBtn {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        background-color: #540f12;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        z-index: 1000;
+    }
+
 }
+
+
+
 
 /* ----------------------------Footer------------------------ */
 .main-footer {

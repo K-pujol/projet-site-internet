@@ -6,12 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
+    
+
 
     <title>Jeux</title>
 
 </head>
 
-<body>
+<body class="jeux-no-scroll">
     <header class="main-header">
 
         <img src="./photo/logo.png" alt="logo site aktu" class="logo">
@@ -40,7 +42,7 @@
 
 
         <!-- bouton "dropdown" !-->
-        
+
         <div class="hamburger-menu">
             <input id="menu__toggle" type="checkbox" />
             <label class="menu__btn" for="menu__toggle">
@@ -57,9 +59,8 @@
     </header>
 
     <main>
-
-        <p>JEUX</p>
-
+        <button id="startBtn">Nouvelle une partie</button>
+        <div id="sketch-container"></div>
 
     </main>
 
@@ -70,7 +71,10 @@
         </div>
     </footer>
 
-    <script src="./script.js"></script>
+    <!-- <script src="./script.js"></script> -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="echiquier.js"></script>
+   
 </body>
 
 
